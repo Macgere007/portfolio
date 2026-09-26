@@ -86,7 +86,7 @@
         .typing {
             font-weight: 700;
             background: linear-gradient(90deg, #4a6cf7, #6a89ff);
-            -webkit-background-clip: text;
+            /* -webkit-background-clip: text; */
             color: transparent;
             position: relative;
             padding-right: 4px;
