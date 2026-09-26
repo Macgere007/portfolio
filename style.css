@@ -1,0 +1,128 @@
+    body { margin:0; font-family: system-ui, sans-serif; color:#1a1a1a; }
+    .container { width: min(1100px, 90%); margin: auto; }
+    header { position: fixed; width:100%; background:white; top:0; left:0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+    .header-inner { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+    .nav a { margin-left:1.5rem; text-decoration:none; color:#333; font-weight:500; }
+    .hero { padding-top:120px; display:flex; align-items:center; min-height:90vh; position:relative; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr;gap: 2rem;position: relative;z-index: 2;}
+    .accent { color:#4a6cf7; }
+    .btn { padding:0.75rem 1.5rem; background:#4a6cf7; color:white; border-radius:8px; text-decoration:none; transition:0.3s; }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(74,108,247,0.25); }
+    .btn.ghost { background:transparent; border:2px solid #4a6cf7; color:#4a6cf7; }
+    .profile-card { width:280px; margin:auto; animation: float 4s ease-in-out infinite; }
+
+    @keyframes float {
+      0%,100% { transform:translateY(0); }
+      50% { transform:translateY(-10px); }
+    }
+
+    .bg-waves { position:absolute; bottom:0; left:0; width:100%; fill:#eef3ff; pointer-events: none; }
+    .section { padding:5rem 0; }
+
+    /* Projects Grid */
+    .projects .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; }
+
+    .project-card { 
+      background:white; 
+      border-radius:16px; 
+      overflow:hidden; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.08); 
+      transform:translateY(20px); 
+      opacity:0; 
+      animation: fadeUp 0.8s ease forwards; 
+    }
+
+    @keyframes fadeUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    .project-card img {
+        
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .project-content {
+      padding:1.2rem;
+    }
+
+    .project-title { font-size:1.2rem; font-weight:600; margin-bottom:0.5rem; }
+    .project-desc { font-size:0.95rem; color:#555; margin-bottom:1rem; }
+
+    .project-link { display:inline-block; padding:0.5rem 1rem; background:#4a6cf7; color:white; border-radius:6px; text-decoration:none; transition:0.3s; }
+    .project-link:hover { transform:translateY(-3px); }
+
+    footer { text-align:center; padding:2rem 0; color:#777; }
+
+    /* Responsive Navbar */
+    .menu-btn { display:none; font-size:1.5rem; background:none; border:none; cursor:pointer; }
+
+    @media (max-width:768px) {
+      .hero-inner { grid-template-columns:1fr; text-align:center; }
+      .hero-left { order:1; }
+      .hero-right { order:2; display:flex; justify-content:center; }
+      .profile-card { margin-top:2rem; }
+
+      .nav { 
+        position:absolute; top:70px; right:0; background:white;
+        display:flex; flex-direction:column; padding:1rem 2rem;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+        transform:translateY(-20px);
+        opacity:0; pointer-events:none; transition:all .3s ease;
+      }
+
+      .nav.open { opacity:1; pointer-events:auto; transform:translateY(0); }
+      .nav a { margin:0.75rem 0; }
+      .menu-btn { display:block; }
+      .subtitle {
+        font-size: 1.6rem;
+        color: #333;
+        margin: 1rem 0 2rem;
+        font-weight: 500;
+      }
+
+        /* Typing text improved style */
+        .typing {
+            font-weight: 700;
+            background: linear-gradient(90deg, #4a6cf7, #6a89ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            position: relative;
+            padding-right: 4px;
+      }
+
+        /* Blinking cursor */
+        .typing::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: #4a6cf7;
+            right: -4px;
+            top: 0;
+            animation: cursorBlink 0.6s infinite;
+       }
+
+        @keyframes cursorBlink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+       }
+
+        /* Fade-in animation for each new role */
+        .fade-in {
+            animation: fadeInText 0.4s ease forwards;
+       }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(5px); }
+            to   { opacity: 1; transform: translateY(0); }
+       }
+
+    }
+    
+        .email-desc {
+        font-weight: bold;
+        position: relative;
+        color:#4a6cf7;
+    }
